@@ -1,18 +1,18 @@
 const body = document.querySelector('body')
 const array = [1,2,3,4,5,6,7,8,9,10];
-let satisfacao =0;
+let repeticao =0;
 let teste=true; 
 while (teste) {
-    satisfacao = window.prompt("Digite um número de 1 a 10 :");
+    repeticao = window.prompt("Digite um número de 1 a 10 :");
     for (let i=0;i<=9;i++) {
-        if (array[i]==satisfacao) {
+        if (array[i]==repeticao) {
             teste=false;
             break;
         }
     }
     if (teste) alert("Entre somente com números de 1 a 10");
 } 
-for (let i = 1; i <= satisfacao; i++){
+for (let i = 1; i <= repeticao; i++){
     busca()
 }
 async function  busca(){
