@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+        <title>to-do list JSON</title>
+        <script src='./Sem7ListaEx6.js'>   </script>
+        <link rel="stylesheet" type="text/css" href="./Sem7ListaEx6.css"/>
+    </head>
+    <body onload="montaTela()" style="background-color: black;">
+        <div class="borda bordaarredondada principal" >
+            <div class="containerlinha" >
+                    <h1 >Lista de Afazeres</h1>
+            </div>
+            <HR>
+            <div class="containerlinha">
+                    <div >
+                        <input type="text" class="separa10" size="30" maxlength="25"  id="entratarefa" placeholder="   Digite uma tarefa...">
+                    </div>
+                    <div style="align-self: center;">
+                        <button id="btn1" class="separa10" onclick="addtarefa(0,0,0)"><img src="https://img.icons8.com/small/16/000000/plus.png"/></button>
+                    </div>
+                    <div style="align-self: center;">
+                        <button id="btn2" class="separa10" onclick="loadjson()">JS</button>
+                    </div>
+             </div>
+            <div class="containerlinha">
+                <div  >
+                    <small> Tamanho máximo 25 caracteres</small>
+                </div>
+            </div>
+            <HR>
+            <div class="containerlinha">
+                <div id="lista" >
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
