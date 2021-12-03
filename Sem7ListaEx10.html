@@ -44,13 +44,19 @@
             align-items: center;
             width: 100vw;
             height: 100vh;
-            flex-direction: column;
+            flex-direction: row;
+            flex-wrap: nowrap;
 
         }
         .retangulo{
-            width: 90px;
+            width: 120px;
             height: 5px;
             border-radius: 0.5rem;
+        }
+        .flor{
+            display: flex;
+            flex-direction: column;
+            margin:10px;
         }
         .quadrado{
             width: 128px;
@@ -61,10 +67,11 @@
     </style>
 <body>
     
-    <div class="centralizar">
-        <div class="quadrado" id="caixa" > </div> 
-        <label id="lb01"></label>
-        <div class="progress-bar retangulo" > </div>    
+            
+    <div><label id="pontos"  style="background-color: burlywood;font-size: 24px;margin:10px"></label></div>
+    <div class="centralizar" id="principal">
+        
+            
     </div> 
     
 </body>
