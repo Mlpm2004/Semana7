@@ -4,6 +4,7 @@
         const secou=false
         let ind=1
         let pontos=0
+        let clicado=false
         const placar= document.querySelector('#pontos')
         placar.innerHTML=pontos
         criaCaixa(ind,imagem,secou)
@@ -17,28 +18,35 @@
                     imagem="plant-flower-shiny.gif"
                      
                 }else if(value>=31 && value<70) {
-                    if (imagem!="plant-default") imagemOld=imagem
-                    imagem="plant-default"
+                    if (imagem!="plant-default.png") imagemOld=imagem
+                    imagem="plant-default.png"
                 }else{
                     if (imagem!="plant-dying.png") imagemOld=imagem
+                    pontua(100,'')
                     imagem="plant-dying.png"
                     secou=true
+                }
+                if (imagemOld=="plant-default.png" && imagem=="plant-flower-shiny.gif" && clicado==true){
+                    pontua(500,'soma')
+                    imagemOld==""
+                    clicado=false
                 }
                 progressbar.style.setProperty('--progress', value--)
                 if (value<0 || value>100){
                     alert('GAME OVER!!!!!!!')
-                    for(item in desligaTemp)clearInterval(item)
+                    for(item in desligaTemp)clearInterval(desligaTemp[item])
+                    for (let i=1; i<=ind;i++){
+                    indice='#caixa'+i
+                     document.querySelector(indice).removeEventListener('click', addValor)
+                    }
                     imagem="plant-dying-flies.gif"
                     value=0
                 }
                 valor.innerHTML=value.toFixed(2)+'%'
                 caixa.style.backgroundImage = `url('${imagem}')`
-            },100))
+            },1000))
             function addValor(){
-                if (imagemOld=="plant-default" && imagem=="plant-flower-shiny.gif"){
-                    pontua(500,'soma')
-                    imagemOld==""
-                }
+                clicado=true
                 pontua(50,'soma')
                 value=value*1.25
                 cliques++
